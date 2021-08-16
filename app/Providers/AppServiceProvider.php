@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
 
-        view()->composer('*', function($view) {
+        view()->composer('includes.navbar', function($view) {
             $currencies=SupportedCurrency::all();
             $view->with(['currencies'=>$currencies]);
         });
